@@ -1,0 +1,22 @@
+---
+- name: remove default nginx site config
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify:
+    - restart nginx
+
+- name: ensure nginx configuration file.
+  copy:
+    src: app.conf
+    dest: /etc/nginx/sites-available/app.conf
+  notify:
+    - restart nginx
+
+- name: enable nginx site config
+  file:
+    src: /etc/nginx/sites-available/app.conf
+    dest: /etc/nginx/sites-enabled/app.conf
+    state: link
+  notify:
+    - restart nginx

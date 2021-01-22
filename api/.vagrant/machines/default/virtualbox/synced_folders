@@ -1,0 +1,1 @@
+{"nfs":{"vagrant-share":{"id":"vagrant-share","type":"nfs","guestpath":"/srv/share","hostpath":"/System/Volumes/Data/Users/con/work/symfony/symfony-range-deprecation-bug/api","disabled":false,"__vagrantfile":true,"map_uid":501,"map_gid":20,"nfs_version":3,"nfs_udp":true,"uuid":"2433682905"}}}

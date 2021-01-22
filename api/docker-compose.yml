@@ -1,0 +1,19 @@
+version: '2'
+services:
+  api:
+    build: .
+    environment:
+      APP_ENV: prod
+      DATABASE_URL: mysql://root:geheim@mysql:3306/app
+      MAILER_DSN: smtp://mail:25
+    links:
+      - mysql
+      - mail
+    ports:
+      - 9444:80
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: app
+      MYSQL_ROOT_PASSWORD: geheim
